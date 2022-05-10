@@ -47,6 +47,84 @@ const NewsBox = ({}) => {
               )
             }
           }
+          news_4: file(relativePath: { eq: "newses/news_4.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
+          news_5: file(relativePath: { eq: "newses/news_5.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
+          news_6: file(relativePath: { eq: "newses/news_6.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
+          news_7: file(relativePath: { eq: "newses/news_7.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
+          news_8: file(relativePath: { eq: "newses/news_8.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
+          news_9: file(relativePath: { eq: "newses/news_9.webp" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                width: 900
+                height: 600
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                aspectRatio: 0.7
+              )
+            }
+          }
         }
       `}
       render={data => <GridBox data={data} content={content} />}

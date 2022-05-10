@@ -10,7 +10,7 @@ import printerest from "../images/pinterest_logo.svg"
 import youtube from "../images/mawa_youtube.svg"
 
 const info =
-  "MAWA GmbH\nHohenwarter Str. 100\n85276 Pfaffenhofen/Ilm\nDeutschland\nTelefon 08441 800-0\nFax 08441 764-21\n"
+  "MAWA Polska\nHohenwarter Str. 100\n85276 Pfaffenhofen/Ilm\nDeutschland\nTelefon 08441 800-0\nFax 08441 764-21\n"
 const Footer = ({}) => {
   return (
     <div css={style}>

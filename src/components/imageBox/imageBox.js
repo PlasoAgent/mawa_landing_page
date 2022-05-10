@@ -18,6 +18,7 @@ const ImageBox = ({ image, content }) => {
           zIndex: 10,
           "@media only screen and (max-width: 1024px)": {
             flexDirection: "column",
+            padding: "0em calc(1% + 1em)",
           },
         }}
       >

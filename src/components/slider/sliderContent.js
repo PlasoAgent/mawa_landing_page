@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import shopIcon from "../../images/mawa_shop.png"
-import arrowDownIcon from "../../images/arrowdown.svg"
+import { StaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 
 const SliderContent = ({ activeIndex, imageSlider, setActiveIndex, len }) => {
   const [startX, setStartX] = useState(null)
@@ -45,79 +47,103 @@ const SliderContent = ({ activeIndex, imageSlider, setActiveIndex, len }) => {
     setX(e.changedTouches[0].screenX)
   }
   return (
-    <section>
-      <div
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
-        onMouseUp={handleMouseUp}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onTouchMove={handleTouchMove}
-        css={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          zIndex: "1",
-        }}
-      ></div>
-      <div>
-        {imageSlider.map((slide, index) => (
+    <StaticQuery
+      query={graphql`
+        {
+          slide_image1: file(relativePath: { eq: "slide_image1.png" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                layout: FULL_WIDTH
+              )
+            }
+          }
+          slide_image2: file(relativePath: { eq: "slide_image2.jpg" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                layout: FULL_WIDTH
+              )
+            }
+          }
+          slide_image3: file(relativePath: { eq: "slide_image3.png" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                layout: FULL_WIDTH
+              )
+            }
+          }
+          slide_image4: file(relativePath: { eq: "slide_image4.png" }) {
+            id
+            childImageSharp {
+              gatsbyImageData(
+                blurredOptions: { width: 100 }
+                placeholder: BLURRED
+                transformOptions: { cropFocus: CENTER }
+                layout: FULL_WIDTH
+              )
+            }
+          }
+        }
+      `}
+      render={data => (
+        <section>
           <div
-            key={index}
-            css={[
-              slides,
-              index === activeIndex ? slides.active : slides.inactive,
-            ]}
-          >
-            <img src={slide.urls} alt="" css={slideImage} />
-            <h2 css={slideImage.slideTitle}>{slide.title}</h2>
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+            onTouchMove={handleTouchMove}
+            css={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              zIndex: "1",
+            }}
+          ></div>
+          <div>
+            {imageSlider.map((slide, index) => (
+              <div
+                key={index}
+                css={[
+                  slides,
+                  index === activeIndex ? slides.active : slides.inactive,
+                ]}
+              >
+                <GatsbyImage
+                  image={getImage(data[slide.urls])}
+                  css={slideImage}
+                />
+                {/* <img src={data[slide.urls]} alt="" css={slideImage} /> */}
+                <h2 css={slideImage.slideTitle}>{slide.title}</h2>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div css={mawaShop}>
-        <a href="https://mawa-polska.pl/">
-          <span>Kliknij tutaj, aby przejść do sklepu</span>
-          <img src={shopIcon} alt="" />
-        </a>
-      </div>
-      <div css={arrowDown}>
-        <img src={arrowDownIcon} alt="" />
-      </div>
-    </section>
+          <div css={mawaShop}>
+            <a href="https://mawa-polska.pl/">
+              <span>Kliknij tutaj, aby przejść do sklepu</span>
+              <img src={shopIcon} alt="" />
+            </a>
+          </div>
+        </section>
+      )}
+    />
   )
 }
 
 export default SliderContent
-const arrowDown = {
-  position: "absolute",
-  textAlign: "center",
-  bottom: "2em",
-  display: "block",
-  width: "100%",
-  zIndex: 900,
-  cursor: "pointer",
-  img: {
-    animationName: "topbottom",
-    animationDuration: "3s",
-    animationIterationCount: "infinite",
-    animationTimingFunction: "ease-in-out",
-    minHeight: "2em",
-    width: "2em",
-    height: "auto",
-    "@keyframes topbottom": {
-      "0%": {
-        transform: "translate(0, -0.5em)",
-      },
-      "50%": {
-        transform: "translate(0, 0em)",
-      },
-      "100%": {
-        transform: "translate(0, -0.5em)",
-      },
-    },
-  },
-}
 const mawaShop = {
   position: "absolute",
   right: "1em",
@@ -141,8 +167,6 @@ const mawaShop = {
     height: "100%",
   },
   "@media only screen and (max-width: 425px)": {
-    bottom: "7em",
-    right: "1em",
     width: "6em",
     span: {
       fontSize: "15px",
@@ -169,13 +193,18 @@ const slideImage = {
   position: "relative",
   objectFit: "cover",
   slideTitle: {
+    textTransform: "uppercase",
+    whiteSpace: "pre-line",
     width: "100%",
     color: "white",
     fontSize: "50px",
     position: "absolute",
     textAlign: "center",
-    top: "40%",
+    top: "55%",
     zIndex: 10,
     userSelect: "none",
+    "@media only screen and (max-width: 900px)": {
+      fontSize: "1.5em",
+    },
   },
 }

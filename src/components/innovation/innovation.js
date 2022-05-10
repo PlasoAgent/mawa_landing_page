@@ -4,15 +4,17 @@ import image from "../../images/mawa_top100.webp"
 import icon from "../../images/arrow.svg"
 const Innovation = ({}) => {
   const arrows = [
-    { text: "Innovationserfolg" },
-    { text: "Innovationsklima" },
-    { text: "Innovative Prozesse und \nOrganisation" },
-    { text: "Außenorientierung und \nOpen Innovation" },
-    { text: "Innovationsförderndes \nTOP-Management" },
+    { text: "Innowacyjny sukces" },
+    { text: "Innowacje dla klimatu" },
+    { text: "Innowacyjne procesy i \norganizacja" },
+    { text: "Orientacja zewnętrzna i \notwarte innowacje" },
+    { text: "Promowanie innowacji \nTOP-Zarządzanie" },
   ]
   return (
     <section>
-      <FancyHeader text={"MAWA UNTER DEN TOP 100 INNOVATOREN IN DEUTSCHLAND"} />
+      <FancyHeader
+        text={"MAWA WŚRÓD 100 NAJWIĘKSZYCH INNOWATORÓW W NIEMCZECH"}
+      />
       <h3
         css={{
           fontSize: "1.4em",
@@ -28,17 +30,19 @@ const Innovation = ({}) => {
           },
         }}
       >
-        Wir brennen für das NEUE
+        Zapaleni dla NOWOŚCI
       </h3>
       <div css={style.container}>
         <div css={style.rowRight}>
           <div css={style.topRowLeft}>
-            <img src={image} alt="" css={style.mainImage} />
+            <a href="https://www.top100.de/die-top-innovatoren/2021/mawa-gmbh.html">
+              <img src={image} alt="" css={style.mainImage} />
+            </a>
           </div>
           <div css={style.topRowRight}>
             <p>
-              <strong>MAWA</strong> wurde im Januar 2021 als einer der{" "}
-              <strong>TOP 100 Innovatoren in Deutschland</strong> ausgezeichnet.
+              <strong>MAWA</strong> w styczniu 2021 roku została uznana za
+              jednego z <strong>TOP 100 innowatorów w Niemczech.</strong>
             </p>
             {arrows.map((e, i) => (
               <div
@@ -59,29 +63,24 @@ const Innovation = ({}) => {
         </div>
         <div css={style.rowLeft}>
           <p>
-            Als einziger deutscher Innovationswettbewerb zeichnet TOP 100
-            mittelständische Unternehmen für ihr Innovationsmanagement und ihren
-            Innovationserfolg aus.{" "}
+            TOP 100 to jedyny niemiecki konkurs innowacyjności, w którym
+            nagradza się średnie przedsiębiorstwa za zarządzanie innowacjami i
+            ich sukcesy.{" "}
           </p>
           <p>
-            Als einziger deutscher Innovationswettbewerb zeichnet TOP 100
-            mittelständische Unternehmen für ihr Innovationsmanagement und ihren
-            Innovationserfolg aus.{" "}
+            TOP 100 nie przyznaje więc nagród poszczególnym produktom, ale
+            przygląda się wszystkim etapom procesu innowacji, opierając się na
+            naukowo uzasadnionej analizie około 120 kryteriów w pięciu
+            kategoriach.
           </p>
           <p>
-            Als einziger deutscher Innovationswettbewerb zeichnet TOP 100
-            mittelständische Unternehmen für ihr Innovationsmanagement und ihren
-            Innovationserfolg aus.{" "}
+            W ten sposób mierzy się nie tylko wyniki innowacyjne, ale także
+            potencjał innowacyjny tkwiący w przedsiębiorstwie.
           </p>
+          <p>MAWA zdołała zwyciężyć wśród dużej liczby uczestniczących firm.</p>
           <p>
-            Als einziger deutscher Innovationswettbewerb zeichnet TOP 100
-            mittelständische Unternehmen für ihr Innovationsmanagement und ihren
-            Innovationserfolg aus.{" "}
-          </p>
-          <p>
-            Als einziger deutscher Innovationswettbewerb zeichnet TOP 100
-            mittelständische Unternehmen für ihr Innovationsmanagement und ihren
-            Innovationserfolg aus.{" "}
+            Dlatego z dumą przyjmujemy tę wspaniałą nagrodę dla siebie, dla
+            naszych pracowników i dla naszych partnerów!
           </p>
         </div>
       </div>
@@ -106,7 +105,7 @@ const style = {
       padding: "1em 3em ",
     },
     "@media only screen and (max-width: 1024px)": {
-      padding: "0 1em ",
+      padding: "0em calc(1% + 2em)",
     },
   },
   mainImage: {

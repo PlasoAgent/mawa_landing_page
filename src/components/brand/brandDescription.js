@@ -6,7 +6,7 @@ import data from "./content"
 
 const BrandDescription = ({}) => {
   return (
-    <section css={{ maxWidth: "1700px", margin: "auto" }}>
+    <section css={{ maxWidth: "1700px", margin: "auto" }} id="start">
       <div css={container}>
         <div css={photoBox}>
           <img src={SchenkPhoto} alt="" />
@@ -39,6 +39,7 @@ const container = {
   zIndex: 10,
   "@media only screen and (max-width: 1024px)": {
     flexDirection: "column",
+    padding: "0em calc(1% + 1em)",
   },
 }
 const photoBox = {

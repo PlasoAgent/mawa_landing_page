@@ -46,5 +46,6 @@ const style = {
   "@media only screen and (max-width: 1024px)": {
     gridTemplateColumns: "repeat(1,1fr)",
     gridTemplateRows: "repeat(1, minmax(200px, auto))",
+    padding: "0em calc(1% + 2em)",
   },
 }

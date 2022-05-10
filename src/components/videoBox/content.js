@@ -1,24 +1,24 @@
 export default {
-  title: "#MAWA – KLEIDERBÜGEL LIVE",
-  desc: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+  title: "#MAWA – Wieszaki live",
+  desc: "Odkryj nasze kolekcje",
   isVideo: true,
   features: [
     {
-      title: "Lorem ipsum dolor",
+      title: "MAWA na targach Euroshop 2020",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
+        "Zanurz się w kreatywnym świecie MAWA Fashion. W każdym sklepie prezentujemy towary z wieszakami MAWA w sposób przyciągający wzrok. Wieszak na ubrania jest zawsze częścią wystroju Twojego sklepu z odzieżą, a tym samym ambasadorem Twojej marki modowej - zarówno w przypadku wieszaków drewnianych, metalowych, jak i naszego biopolimeru Tex-Plast, materiału pochodzącego z recyklingu.",
       video: "video_1",
     },
     {
-      title: "Phasellus sit amet nisl dui",
+      title: "MAWA na targach Ambiente 2020",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum pretium ex, a scelerisque lorem bibendum non. Maecenas faucibus scelerisque metus vitae finibus. Maecenas eu blandit lacus. Proin arcu nunc, condimentum sit amet nunc sed, vulputate lobortis nulla. Curabitur id orci cursus ipsum hendrerit dictum non rhoncus neque.",
+        "Dzięki odpowiedniemu doborowi kształtu i koloru, a także idealnemu dopasowaniu do każdego ubrania, integrujemy wieszak MAWA z koncepcją domu i mieszkania Twoich klientów - zgodnie z ich indywidualnym stylem.",
       video: "video_2",
     },
     {
-      title: "Phasellus sit amet nisl dui",
+      title: "MAWA w szafie Twoich klientów",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum pretium ex, a scelerisque lorem bibendum non. Maecenas faucibus scelerisque metus vitae finibus. Maecenas eu blandit lacus. Proin arcu nunc, condimentum sit amet nunc sed, vulputate lobortis nulla. Curabitur id orci cursus ipsum hendrerit dictum non rhoncus neque.",
+        "Wieszaki są bardzo ważnym elementem naszej szafy, spoczywa na nich obowiązek przechowywania na sobie ubrań. To od użytego wieszaka zależy czy ubrania po noszeniu odzyskają swój kształt, czy też będą się odkształcać, wgniatać, a nawet gnieść. W MAWA mamy odpowiedni wieszak do każdego typu odzieży, do każdej garderoby, po prostu dla Ciebie - dostosowany do Twoich preferencji w zakresie kształtu, koloru i materiału.",
       video: "video_3",
     },
   ],

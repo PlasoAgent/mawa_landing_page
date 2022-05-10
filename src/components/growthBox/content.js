@@ -1,6 +1,6 @@
 export default {
-  title: "NACHHALTIGKEIT",
-  desc: "Unser Beitrag für Ihre Gesundheit und unsere Umwelt",
+  title: "ZRÓWNOWAŻONY ROZWÓJ",
+  desc: "Nasz wkład w Twoje zdrowie i nasze środowisko",
   isVideo: false,
   features: [
     {

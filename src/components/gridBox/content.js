@@ -1,33 +1,68 @@
 export default {
-  title: "#MAWA - NEUHEITEN 2022",
+  title: "#MAWA - NOWOŚCI 2022",
   isVideo: false,
   features: [
     {
-      title: "Lorem ipsum dolor",
+      title: "Najlepszy metal",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
+        "Od spektakularnych po nowatorskie - oto wieszaki z NAJLEPSZEGO METALU. Nowa generacja haczyków i kombinacje kolorystyczne ze specjalną funkcją antypoślizgową MAWA. Idealne połączenie doskonałego wyglądu i funkcjonalności!",
       image: "news_1",
       isNew: true,
     },
     {
-      title: "Phasellus sit amet nisl dui",
+      title: "TWIST",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum pretium ex, a scelerisque lorem bibendum non. Maecenas faucibus scelerisque metus vitae finibus. Maecenas eu blandit lacus. Proin arcu nunc, condimentum sit amet nunc sed, vulputate lobortis nulla. Curabitur id orci cursus ipsum hendrerit dictum non rhoncus neque.",
+        "Wieszaki TWIST oferują prawdziwą wydajność: są superlekkie, spełniają najwyższe standardy funkcjonalności i mają w pełni obrotowy hak. Gwarantują one idealne zawieszenie niemal każdego rodzaju odzieży i pozwalają zaoszczędzić około 50% miejsca bez żadnego wysiłku.",
       image: "news_2",
       isNew: true,
     },
     {
-      title: "Phasellus sit amet nisl dui",
+      title: "Luksus",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed bibendum pretium ex, a scelerisque lorem bibendum non. Maecenas faucibus scelerisque metus vitae finibus. Maecenas eu blandit lacus. Proin arcu nunc, condimentum sit amet nunc sed, vulputate lobortis nulla. Curabitur id orci cursus ipsum hendrerit dictum non rhoncus neque.",
+        "Wieszaki na ubrania w nowych kolorach: złoty, srebrny i brązowy, spełnią specjalne wymagania klientów i zapewniają wyjątkowy luksus. Ten efekt glamour zapewnia tylko MAWA!",
       image: "news_3",
       isNew: true,
     },
     {
-      title: "Lorem ipsum dolor",
+      title: "RED",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium optio, eaque rerum! Provident similique accusantium nemo autem.",
-      image: "news_1",
+        "Kolor czerwony symbolizuje czyste emocje: Miłość, pasję i siłę. Wszystkie te emocje połączyliśmy w naszej kolekcji RED. W tym celu wybraliśmy kilka najbardziej udanych modeli z naszej oferty i teraz pozwoliliśmy im zabłysnąć dla Ciebie czerwienią MAWA.",
+      image: "news_4",
+      isNew: true,
+    },
+    {
+      title: "ELEGANCE",
+      description:
+        "Dwa materiały, jeden styl: to właśnie jest ELEGANCE. Połączenie naszych najlepszych wieszaków metalowych i drewnianych łączy w sobie zalety obu materiałów. Nasze nowoczesne kombinacje kolorów dodają każdemu ubraniu odrobinę ELEGANCJI.",
+      image: "news_5",
+      isNew: true,
+    },
+    {
+      title: "Brillant",
+      description:
+        "Kolor brokatowego różu, brokatowego błękitu i brokatowego srebra - zabawne, uniwersalne kolory, w których każdy może zabłysnąć. Cecha szczególna: chromowany haczyk z kolekcji MAWA Brilliant zapewnia różnorodność i nową werwę!",
+      image: "news_6",
+      isNew: true,
+    },
+    {
+      title: "Wieszaki AIR - do suszenia",
+      description:
+        "Wyprane ubrania jak świeżo wyprasowane. To takie proste! Zawieś wilgotne pranie na wieszaku do suszenia MAWA AIR. Pozostaw do wyschnięcia. Gotowe!",
+      image: "news_7",
+      isNew: true,
+    },
+    {
+      title: "Najlepsze Drewno",
+      description:
+        "Czy to to zwykły drewniany wieszak? Wcale nie. Drewno oferuje niemal niewiarygodne bogactwo możliwości kształtowania wieszaków na ubrania w sposób odpowiadający indywidualnemu stylowi życia i potrzebom.",
+      image: "news_8",
+      isNew: false,
+    },
+    {
+      title: "Black & White",
+      description:
+        "Mężczyźni są inni. Kobiety jeszcze bardziej. Dlatego mamy też idealną świątynię dla każdego z osobna.  Kobiety są wymagające. Zwłaszcza jeśli chodzi o ich ubrania. Kobiety i moda oznaczają miłość.",
+      image: "news_9",
       isNew: false,
     },
   ],

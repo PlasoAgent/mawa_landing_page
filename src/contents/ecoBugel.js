@@ -1,10 +1,10 @@
 export default {
-  title: "MAWA ECO BÜGEL",
+  title: "MAWA ECO WIESZAKI",
   text: [
-    { inner: "Bereit für die neue Welt?" },
+    { inner: "Gotowi na nowy świat?" },
     {
       inner:
-        "Wir haben keine zweite Erde, darum müssen wir Nachhaltigkeit jetzt neu denken!",
+        "Nie mamy drugiej Ziemi, więc musimy przemyśleć kwestię zrównoważonego rozwoju już teraz!",
     },
   ],
 }

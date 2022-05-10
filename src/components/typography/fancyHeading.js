@@ -13,6 +13,7 @@ const style = {
   textAlign: "center",
   fontWeight: "500",
   color: "#CBCBCB",
+  textTransform: "uppercase",
   "::before": {
     content: '""',
     display: "inline-block",

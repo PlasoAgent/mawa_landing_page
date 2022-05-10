@@ -53,7 +53,7 @@ const style = {
       fontWeight: "400",
     },
   },
-  innerText: { fontSize: "1.1em", lineHeight: "1.3em" },
+  innerText: { fontSize: "1.1em", lineHeight: "1.7em" },
   img: {
     width: "100%",
     padding: "0",
