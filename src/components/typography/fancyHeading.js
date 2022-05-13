@@ -47,4 +47,13 @@ const style = {
       bottom: "0.2em",
     },
   },
+  "@media only screen and (max-width: 425px)": {
+    width: "80%",
+    margin: "0em auto",
+    padding: "1em 0 1em",
+    fontSize: "1.1em",
+    boxSizing: "border-box",
+    fontWeight: "500",
+    color: "#a4a3a3",
+  },
 }

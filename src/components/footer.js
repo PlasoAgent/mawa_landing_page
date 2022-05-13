@@ -10,7 +10,7 @@ import printerest from "../images/pinterest_logo.svg"
 import youtube from "../images/mawa_youtube.svg"
 
 const info =
-  "MAWA Polska\nHohenwarter Str. 100\n85276 Pfaffenhofen/Ilm\nDeutschland\nTelefon 08441 800-0\nFax 08441 764-21\n"
+  "MAWA Polska\nWenedów 3\n75-847 Koszalin\nPolska\nTelefon: 660 200 016, 94 342 32 72"
 const Footer = ({}) => {
   return (
     <div css={style}>
@@ -28,7 +28,7 @@ const Footer = ({}) => {
       <div css={style.footerLeft}>
         <div css={style.footerLeft.column1}>
           {info}
-          <a href="mailto:info@mawa.de">INFO@MAWA.DE</a>
+          <a href="mailto:office@plaso-agentur.de">info@mawa-polska.pl</a>
         </div>
       </div>
       <div css={style.footerRight}>
@@ -36,7 +36,7 @@ const Footer = ({}) => {
           <div>
             <p>
               {
-                "Bestellen Sie hier\ndirekt Ihre Bügel\nfür den privaten Gebrauch"
+                "Zamów tutaj\nbezpośrednio dla Ciebie\nwieszaki do użytku prywatnego"
               }
             </p>
           </div>
@@ -49,7 +49,9 @@ const Footer = ({}) => {
             <img src={mawa_boc} alt="" />
           </div>
           <div>
-            <img src={mawa_top100} alt="" />
+            <a href="https://www.top100.de/die-top-innovatoren/2021/mawa-gmbh.html">
+              <img src={mawa_top100} alt="" />
+            </a>
           </div>
         </div>
         <div css={style.footerRight.column2}>
