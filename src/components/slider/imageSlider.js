@@ -13,6 +13,6 @@ export default [
   },
   {
     title: "Silna marka,\nnajlepsze wieszaki premium",
-    urls: "slide_image2",
+    urls: "slide_image1",
   },
 ]

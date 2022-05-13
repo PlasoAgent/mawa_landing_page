@@ -27,7 +27,7 @@ const style = {
   display: "grid",
   gridTemplateColumns: "repeat(3,1fr)",
   maxWidth: "1520px",
-  gridGap: "20px",
+  gridGap: "60px",
   margin: "auto",
   h3: {
     fontSize: "1.4em",
@@ -41,11 +41,19 @@ const style = {
       margin: "0 0 2em",
       fontWeight: "300",
     },
+    "@media only screen and (max-width: 425px)": {
+      padding: "0em 2em 0em",
+      fontSize: "1.2em",
+    },
   },
 
   "@media only screen and (max-width: 1024px)": {
     gridTemplateColumns: "repeat(1,1fr)",
     gridTemplateRows: "repeat(1, minmax(200px, auto))",
     padding: "0em calc(1% + 2em)",
+    gridGap: "20px",
+  },
+  "@media only screen and (max-width: 425px)": {
+    gridGap: "10px",
   },
 }

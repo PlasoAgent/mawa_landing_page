@@ -66,9 +66,13 @@ const descriptionBox = {
     margin: "0",
     textAlign: "left",
     fontWeight: "400",
+    "@media only screen and (max-width: 425px)": {
+      fontSize: "1.2em",
+      padding: "1em 0",
+    },
   },
   "@media only screen and (max-width: 1024px)": {
     width: "100%",
-    padding: 0,
+    padding: "1em 0",
   },
 }
