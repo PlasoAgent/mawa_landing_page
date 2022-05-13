@@ -15,7 +15,15 @@ const Footer = ({}) => {
   return (
     <div css={style}>
       <div css={style.footerTop}>
-        <div>© {new Date().getFullYear()} MAWA GmbH</div>
+        <div css={style.footerTop.topLeft}>
+          © {new Date().getFullYear()} MAWA GmbH
+        </div>
+        <div css={style.footerTop.topRigth}>
+          <a href="https://mawa-polska.pl/polityka-prywatnosci/">
+            Polityka Prywatności
+          </a>
+          <a href="https://mawa-polska.pl/regulamin/">Regulamin</a>
+        </div>
       </div>
       <div css={style.footerLeft}>
         <div css={style.footerLeft.column1}>
@@ -98,6 +106,35 @@ const style = {
     fontSize: "1.2em",
     fontWeight: "300",
     borderBottom: "1px #ff0f00 solid",
+    topLeft: {
+      float: "left",
+      "@media only screen and (max-width: 900px)": {
+        float: "none",
+        width: '100%',
+        margin: '0 0 1em',
+      },
+    },
+    topRigth: {
+      float: "right",
+      a: {
+        color: "#fff",
+        padding: "0 0 0 2em",
+        fontSize: "0.9em",
+        fontWeight: "300",
+        border: "none",
+        textDecoration: "none",
+        outline: "none",
+        "@media only screen and (max-width: 900px)": {
+          display: "block",
+          gap:'20px',
+          padding: "0.8em 0 !important",
+          width: "100%",
+        },
+      },
+      "@media only screen and (max-width: 900px)": {
+        float: "none",
+      },
+    },
     "@media only screen and (max-width: 1300px)": {
       textAlign: "center",
     },
