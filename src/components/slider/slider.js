@@ -1,11 +1,10 @@
-import React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import Dots from "./dots"
 import SliderContent from "./sliderContent"
-import imageSlider from "./imageSlider"
+import { imageSlider } from "./imageSlider"
 import { useEffect } from "react"
 
-const Slider = ({ time }) => {
+const Slider = ({ time, customCss }) => {
   const [activeIndex, setActiveIndex] = useState(0)
   const len = imageSlider.length - 1
   useEffect(() => {
@@ -13,9 +12,9 @@ const Slider = ({ time }) => {
       setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
     }, time * 1000)
     return () => clearInterval(interval)
-  }, [activeIndex])
+  }, [activeIndex, time, len])
   return (
-    <div css={sliderContainer}>
+    <div css={[sliderContainer, customCss]}>
       <SliderContent
         activeIndex={activeIndex}
         imageSlider={imageSlider}

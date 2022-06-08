@@ -106,6 +106,7 @@ const SliderContent = ({ activeIndex, imageSlider, setActiveIndex, len }) => {
             onTouchStart={handleTouchStart}
             onTouchEnd={handleTouchEnd}
             onTouchMove={handleTouchMove}
+            aria-hidden="true"
             css={{
               position: "absolute",
               width: "100%",
@@ -132,7 +133,7 @@ const SliderContent = ({ activeIndex, imageSlider, setActiveIndex, len }) => {
             ))}
           </div>
           <div css={mawaShop}>
-            <a href="https://mawa-polska.pl/">
+            <a href="https://sklep.mawa-polska.pl/">
               <span>Kliknij tutaj, aby przejść do sklepu</span>
               <img src={shopIcon} alt="" />
             </a>
@@ -182,7 +183,6 @@ const slides = {
   },
   height: "100vh",
   width: "100%",
-  position: "relative",
   position: "absolute",
   left: 0,
   transition: "opacity 2s ease-in-out",

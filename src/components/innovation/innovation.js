@@ -2,7 +2,7 @@ import React from "react"
 import FancyHeader from "../typography/fancyHeading"
 import image from "../../images/mawa_top100.webp"
 import icon from "../../images/arrow.svg"
-const Innovation = ({}) => {
+const Innovation = () => {
   const arrows = [
     { text: "Innowacyjny sukces" },
     { text: "Innowacje dla klimatu" },

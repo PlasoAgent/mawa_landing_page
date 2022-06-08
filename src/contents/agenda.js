@@ -1,4 +1,4 @@
-export default {
+export const agendaContent = {
   innerTitle:
     "MAWA to miejsce, gdzie o zrównoważonym rozwoju myśli się w sposób kompleksowy.",
   text: [

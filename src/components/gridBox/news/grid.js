@@ -20,6 +20,7 @@ const Grid = ({ feature, data, isVideo }) => {
               src={Object.values(data[feature.video])[0]}
               type="video/mp4"
             />
+            <track src="" kind="captions" srclang="de" label="captions"></track>
           </video>
         </div>
       ) : (

@@ -1,4 +1,4 @@
-export default {
+export const content = {
   title: "ZRÓWNOWAŻONY ROZWÓJ",
   desc: "Nasz wkład w Twoje zdrowie i nasze środowisko",
   isVideo: false,

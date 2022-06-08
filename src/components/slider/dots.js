@@ -14,6 +14,8 @@ const Dots = ({ activeIndex, onclick, imageSlider }) => {
                 : allDots.dot
             }
             onClick={() => onclick(index)}
+            onKeyDown={() => onclick(index)}
+            aria-hidden="true"
           ></span>
         ))}
       </div>

@@ -1,4 +1,4 @@
-export default [
+export const imageSlider = [
   {
     title: "Silna marka,\nnajlepsze wieszaki premium",
     urls: "slide_image2",

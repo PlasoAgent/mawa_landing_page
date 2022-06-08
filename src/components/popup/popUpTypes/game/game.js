@@ -15,8 +15,9 @@ const cardImages = [
   { src: image5, matched: false },
   { src: image6, matched: false },
 ]
-const Game = ({}) => {
+const Game = () => {
   const [cards, setCards] = useState([])
+  console.log(cards)
   const [turns, setTurns] = useState(0)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
@@ -32,13 +33,15 @@ const Game = ({}) => {
     setTurns(0)
   }
   const checkWin = arr => {
-    console.log(arr)
-    console.log(arr?.every(element => console.log(element.matched)))
+    // console.log(arr)
+    // console.log(arr?.every(element => console.log(element.matched)))
     return arr?.every(element => element.matched === true)
   }
   // handle a choice
   const handleChoice = card => {
-    choiceOne ? setChoiceTwo(card) : setChoiceOne(card)
+    choiceOne && choiceOne.id !== card.id
+      ? setChoiceTwo(card)
+      : setChoiceOne(card)
     //not here
   }
   // compare 2 selected cards

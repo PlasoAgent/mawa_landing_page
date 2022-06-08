@@ -1,4 +1,4 @@
-export default {
+export const content = {
   title: "MAWA – LIFESTYLE",
   desc: "Odnajdź wieszak uszyty na Twoją miarę!",
   isVideo: false,

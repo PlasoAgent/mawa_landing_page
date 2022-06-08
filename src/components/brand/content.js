@@ -1,4 +1,4 @@
-export default {
+export const content = {
   title: "MAWA - MARKA STULECIA & ORGINAŁ PROSTO Z NIEMCZECH",
   description: [
     {

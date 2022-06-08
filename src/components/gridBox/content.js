@@ -1,4 +1,4 @@
-export default {
+export const content = {
   title: "#MAWA - NOWOŚCI 2022",
   isVideo: false,
   features: [

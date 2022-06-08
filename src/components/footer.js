@@ -11,18 +11,18 @@ import youtube from "../images/mawa_youtube.svg"
 
 const info =
   "MAWA Polska\nWenedów 3\n75-847 Koszalin\nPolska\nTelefon: 660 200 016, 94 342 32 72"
-const Footer = ({}) => {
+const Footer = () => {
   return (
     <div css={style}>
       <div css={style.footerTop}>
         <div css={style.footerTop.topLeft}>
-          © {new Date().getFullYear()} MAWA GmbH
+          © {new Date().getFullYear()} mawa-polska.pl
         </div>
         <div css={style.footerTop.topRigth}>
-          <a href="https://mawa-polska.pl/polityka-prywatnosci/">
+          <a href="https://sklep.mawa-polska.pl/polityka-prywatnosci/">
             Polityka Prywatności
           </a>
-          <a href="https://mawa-polska.pl/regulamin/">Regulamin</a>
+          <a href="https://sklep.mawa-polska.pl/regulamin/">Regulamin</a>
         </div>
       </div>
       <div css={style.footerLeft}>
@@ -35,13 +35,17 @@ const Footer = ({}) => {
         <div css={style.footerRight.column1}>
           <div>
             <p>
-              {
-                "Zamów tutaj\nbezpośrednio dla Ciebie\nwieszaki do użytku prywatnego"
-              }
+              {" "}
+              <a href="https://sklep.mawa-polska.pl/">Zamów tutaj</a>
+              {"\nbezpośrednio dla Ciebie\nwieszaki do użytku prywatnego"}
             </p>
           </div>
           <div>
-            <a href="https://mawa-polska.pl/" target="_blank">
+            <a
+              href="https://sklep.mawa-polska.pl/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={mawa_shop} alt="" />
             </a>
           </div>
@@ -59,17 +63,26 @@ const Footer = ({}) => {
             <a
               href="https://www.instagram.com/accounts/login/?next=/mawa_original/"
               target="_blank"
+              rel="noreferrer"
             >
               <img src={insta} alt="" />
             </a>
           </div>
           <div>
-            <a href="https://www.facebook.com/MAWA.Original/" target="_blank">
+            <a
+              href="https://www.facebook.com/MAWA.Original/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={facebook} alt="" />
             </a>
           </div>
           <div>
-            <a href="https://www.pinterest.de/mawa_original/" target="_blank">
+            <a
+              href="https://www.pinterest.de/mawa_original/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={printerest} alt="" />
             </a>
           </div>
@@ -77,6 +90,7 @@ const Footer = ({}) => {
             <a
               href="https://www.youtube.com/channel/UCXGWBTzTI_I7rt3fWBab7uA"
               target="_blank"
+              rel="noreferrer"
             >
               <img src={youtube} alt="" />
             </a>
@@ -112,8 +126,8 @@ const style = {
       float: "left",
       "@media only screen and (max-width: 900px)": {
         float: "none",
-        width: '100%',
-        margin: '0 0 1em',
+        width: "100%",
+        margin: "0 0 1em",
       },
     },
     topRigth: {
@@ -128,7 +142,7 @@ const style = {
         outline: "none",
         "@media only screen and (max-width: 900px)": {
           display: "block",
-          gap:'20px',
+          gap: "20px",
           padding: "0.8em 0 !important",
           width: "100%",
         },
@@ -189,6 +203,10 @@ const style = {
     boxSizing: "border-box",
     textAlign: "right",
     fontSize: "1em",
+    a: {
+      color: "#fff",
+      textDecoration: "none",
+    },
     column1: {
       color: "#fff",
       boxSizing: "border-box",

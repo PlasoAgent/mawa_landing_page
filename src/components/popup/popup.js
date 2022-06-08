@@ -1,6 +1,6 @@
 import React from "react"
 import Game from "./popUpTypes/game/game"
-const Popup = ({ popupType }) => {
+const Popup = () => {
   return (
     <div css={style}>
       <Game />

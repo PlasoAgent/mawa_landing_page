@@ -1,4 +1,4 @@
-export default {
+export const content = {
   title: "#MAWA – Wieszaki live",
   desc: "Odkryj nasze kolekcje",
   isVideo: true,

@@ -1,10 +1,9 @@
-import { DomainVerification } from "@mui/icons-material"
 import React from "react"
-import SchenkPhoto from "../../images/MAWAHome_FrSchenk.png"
+import SchenkPhoto from "../../images/MAWAHome_FrSchenk.webp"
 import mawaBrand from "../../images/mawa_brand_century.jpg"
-import data from "./content"
+import { content as data } from "./content"
 
-const BrandDescription = ({}) => {
+const BrandDescription = () => {
   return (
     <section css={{ maxWidth: "1700px", margin: "auto" }} id="start">
       <div css={container}>

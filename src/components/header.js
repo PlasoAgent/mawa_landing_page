@@ -4,8 +4,9 @@ import logoClaim from "../images/mawa_claim_w.svg"
 import original from "../images/mawa_original.svg"
 import mig from "../images/mawa_mig.svg"
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout"
+import { Link } from "gatsby"
 
-const Header = ({}) => {
+const Header = () => {
   const [isTop, setIsTop] = React.useState("large")
   React.useEffect(() => {
     window.onscroll = () =>
@@ -14,20 +15,22 @@ const Header = ({}) => {
   }, [isTop])
   return (
     <header css={[header, header[isTop]]}>
-      <div css={header[isTop].logo}>
-        <img src={logo} alt="" />
-      </div>
+      <Link to="/">
+        <div css={header[isTop].logo}>
+          <img src={logo} alt="" />
+        </div>
+      </Link>
       <div css={header[isTop].logoClaim}>
         <img src={logoClaim} alt="" />
       </div>
       <div css={header[isTop].mobile}>
-        <a href="https://mawa-polska.pl/">
+        <a href="https://sklep.mawa-polska.pl/">
           <ShoppingCartCheckoutIcon />
           <p>Sklep</p>
         </a>
       </div>
       <nav>
-        <a href="https://mawa-polska.pl/">
+        <a href="https://sklep.mawa-polska.pl/">
           <ShoppingCartCheckoutIcon />
           <p>Sklep</p>
         </a>
@@ -36,7 +39,9 @@ const Header = ({}) => {
         <img src={original} alt="" />
       </div>
       <div css={header[isTop].mig}>
-        <img src={mig} alt="" />
+        <a href="https://sklep.mawa-polska.pl/made-in-germany/">
+          <img src={mig} alt="" />
+        </a>
       </div>
     </header>
   )

@@ -8,9 +8,13 @@ const Card = ({ card, handleChoice, flipped, disabled }) => {
   }
   return (
     <div css={style.card} key={card.id}>
-      <div>
-        <img src={card.src} css={[style.cardFront, flipped && style.flipped]} />
-        <img src={logo} css={style.cardBack} onClick={handleClick} />
+      <div onClick={handleClick} onKeyDown={handleClick} aria-hidden="true">
+        <img
+          src={card.src}
+          css={[style.cardFront, flipped && style.flipped]}
+          alt=""
+        />
+        <img src={logo} css={style.cardBack} alt="" />
       </div>
     </div>
   )

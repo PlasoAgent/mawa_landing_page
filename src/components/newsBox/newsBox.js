@@ -1,9 +1,9 @@
 import React from "react"
 import GridBox from "../gridBox/gridBox"
-import content from "../gridBox/content"
+import { content } from "../gridBox/content"
 import { graphql, StaticQuery } from "gatsby"
 
-const NewsBox = ({}) => {
+const NewsBox = () => {
   return (
     <StaticQuery
       query={graphql`

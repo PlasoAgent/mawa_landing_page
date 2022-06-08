@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import Seo from "../components/seo"
 import Slider from "../components/slider/slider"
 import BrandDescription from "./../components/brand/brandDescription"
@@ -12,18 +12,14 @@ import ecoBugel from "../images/mawa_eco_bugel.webp"
 import mawaAgenda from "../images/mawa_agenda.webp"
 import seoImage from "../images/slide_image1.png"
 //Content//
-import ecoContent from "../contents/ecoBugel"
-import agendaContent from "../contents/agenda"
+import { ecoContent } from "../contents/ecoBugel"
+import { agendaContent } from "../contents/agenda"
 
 import LifeStyleBox from "../components/lifeStyleBox/lifeStyleBox"
 import GrowthBox from "./../components/growthBox/growthBox"
 import Popup from "../components/popup/popup"
-import GameButton from "./../components/gameButton"
 
-const IndexPage = ({}) => {
-  const [popupActive, setPopupActive] = useState(false)
-  const [popupType, setPopupType] = useState(null)
-
+const IndexPage = () => {
   const seo = {
     description:
       "Wieszaki na ubrania produkowane w Niemczech z metalu, drewna i tworzywa sztucznego - na bluzki, spódnice, spodnie i kurtki - wieszaki na ubrania dla monterów sklepów, tekstylnych, hotelarzy i klientów indywidualnych oraz kilka przydatnych akcesoriów: w katalogu MAWA znajdziesz szczegółowe opisy produktów i rekomendacje...",
@@ -46,12 +42,7 @@ const IndexPage = ({}) => {
       <LifeStyleBox />
       <GrowthBox />
       <Agenda image={mawaAgenda} content={agendaContent} />
-      {/* <GameButton
-        popupActive={popupActive}
-        setPopupActive={setPopupActive}
-        setPopupType={setPopupType}
-      /> */}
-      {params.get("type") === "game" && <Popup popupType={popupType} />}
+      {params.get("type") === "game" && <Popup />}
     </div>
   )
 }

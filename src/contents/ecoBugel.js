@@ -1,4 +1,4 @@
-export default {
+export const ecoContent = {
   title: "MAWA ECO WIESZAKI",
   text: [
     { inner: "Gotowi na nowy świat?" },
