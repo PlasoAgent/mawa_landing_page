@@ -10,6 +10,7 @@ module.exports = {
     "gatsby-plugin-htaccess",
     `gatsby-plugin-emotion`,
     `gatsby-plugin-sitemap`,
+    "gatsby-plugin-robots-txt",
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
