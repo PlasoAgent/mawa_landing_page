@@ -61,7 +61,7 @@ const Footer = () => {
         <div css={style.footerRight.column2}>
           <div>
             <a
-              href="https://www.instagram.com/accounts/login/?next=/mawa_original/"
+              href="https://www.instagram.com/mawa_poland/"
               target="_blank"
               rel="noreferrer"
             >
@@ -70,7 +70,7 @@ const Footer = () => {
           </div>
           <div>
             <a
-              href="https://www.facebook.com/MAWA.Original/"
+              href="https://www.facebook.com/MAWA.Polska"
               target="_blank"
               rel="noreferrer"
             >

@@ -1,16 +1,54 @@
+const todayDate = new Date().toISOString().slice(0, 10)
 module.exports = {
   siteMetadata: {
-    title: `MAWA POLSKA`,
+    title: `MAWA Polska`,
     author: `Konrad Kochaniewicz`,
-    siteUrl: `https://www.mawa-polska.pl`,
+    siteUrl: `https://mawa-polska.pl`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     "gatsby-plugin-htaccess",
     `gatsby-plugin-emotion`,
-    `gatsby-plugin-sitemap`,
     "gatsby-plugin-robots-txt",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `{
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }`,
+        resolveSiteUrl: ({ site }) => {
+          return site.siteMetadata.siteUrl
+        },
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          const sitePageNodeMap = allPages.reduce((acc, node) => {
+            const { uri } = node
+            acc[uri] = node
+
+            return acc
+          }, {})
+
+          return allPages.map(page => {
+            return { ...page, ...sitePageNodeMap[page.path] }
+          })
+        },
+      },
+      serialize: ({ path, modifiedGmt }) => {
+        return {
+          url: path,
+          lastmod: modifiedGmt,
+        }
+      },
+    },
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {

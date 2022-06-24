@@ -17,7 +17,7 @@ const cardImages = [
 ]
 const Game = () => {
   const [cards, setCards] = useState([])
-  console.log(cards)
+  // console.log(cards)
   const [turns, setTurns] = useState(0)
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
@@ -99,7 +99,26 @@ const Game = () => {
           <div css={{ color: "white" }}>Tury: {turns}</div>
         </>
       ) : (
-        <p css={{ color: "white" }}>WYGRAŁEŚ TWÓJ KOD RABATOWY TO: 666</p>
+        <p
+          css={{
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          WYGRAŁEŚ TWÓJ KOD RABATOWY TO:{" "}
+          <b
+            css={{
+              color: "#e61c1c",
+              fontSize: 24,
+              margin: 16,
+              textShadow: "1px 1px 0px #ffffff25",
+            }}
+          >
+            SELL2022
+          </b>
+        </p>
       )}
     </div>
   )

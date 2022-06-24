@@ -4,7 +4,7 @@ import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const NotFoundPage = ({ data }) => {
-  console.log(data)
+  // console.log(data)
   const browser = typeof window !== "undefined" && window
   return (
     browser && (
