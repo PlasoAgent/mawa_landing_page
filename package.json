@@ -30,7 +30,8 @@
     "prop-types": "^15.8.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-share": "^4.4.0"
   },
   "devDependencies": {
     "prettier": "^2.6.2"
@@ -46,7 +47,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "cms": "npx netlify-cms-proxy-server"
   },
   "repository": {
     "type": "git",

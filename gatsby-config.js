@@ -2,7 +2,10 @@ const todayDate = new Date().toISOString().slice(0, 10)
 module.exports = {
   siteMetadata: {
     title: `MAWA Polska`,
-    author: `Konrad Kochaniewicz`,
+    author: {
+      name: "Konrad Kochaniewicz",
+      summary: "Frontend Developer",
+    },
     siteUrl: `https://mawa-polska.pl`,
   },
   plugins: [
@@ -57,6 +60,13 @@ module.exports = {
       options: {
         name: `newses`,
         path: `${__dirname}/src/images/newses`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
       },
     },
     `gatsby-transformer-sharp`,

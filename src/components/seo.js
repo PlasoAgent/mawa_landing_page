@@ -18,7 +18,10 @@ function Seo({ description, lang, meta, title, image }) {
           siteMetadata {
             title
             description
-            author
+            author {
+              name
+              summary
+            }
           }
         }
       }
