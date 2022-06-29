@@ -12,41 +12,29 @@ module.exports = {
     `gatsby-plugin-emotion`,
     "gatsby-plugin-robots-txt",
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
+        query: `
+        {
           allSitePage {
             nodes {
               path
             }
           }
-        }`,
-        resolveSiteUrl: ({ site }) => {
-          return site.siteMetadata.siteUrl
-        },
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
         resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-          const sitePageNodeMap = allPages.reduce((acc, node) => {
-            const { uri } = node
-            acc[uri] = node
-
-            return acc
-          }, {})
-
           return allPages.map(page => {
-            return { ...page, ...sitePageNodeMap[page.path] }
+            return { ...page }
           })
         },
-      },
-      serialize: ({ path, modifiedGmt }) => {
-        return {
-          url: path,
-          lastmod: modifiedGmt,
-        }
+        serialize: ({ path }) => {
+          return {
+            url: path,
+            lastmod: todayDate,
+          }
+        },
       },
     },
     {
