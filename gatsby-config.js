@@ -12,6 +12,12 @@ module.exports = {
     `gatsby-plugin-emotion`,
     "gatsby-plugin-robots-txt",
     "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-plugin-netlify-cms`,
+      options: {
+        enableIdentityWidget: true,
+      },
+    },
 
     {
       resolve: "gatsby-plugin-google-tagmanager",
