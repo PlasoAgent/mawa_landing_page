@@ -15,7 +15,13 @@ import {
 // const ShareButtons = ({ title, url, twitterHandle, tags }) => {
 const ShareButtons = ({ title, url }) => {
   return (
-    <div css={{ width: "100%", marginTop: "1rem" }}>
+    <div
+      css={{
+        width: "100%",
+        paddingTop: "1rem",
+        borderTop: "2px solid #ff0f00 ",
+      }}
+    >
       <FacebookShareButton css={style.shareButton} url={url} title={title}>
         <FacebookIcon size={32} round={true} />
       </FacebookShareButton>

@@ -9,8 +9,13 @@ import { Link } from "gatsby"
 const Header = () => {
   const [isTop, setIsTop] = React.useState("large")
   React.useEffect(() => {
-    window.onscroll = () =>
-      window.pageYOffset === 0 ? setIsTop("large") : setIsTop("small")
+    if (typeof window !== "undefined") {
+      console.log(window.location.pathname)
+    }
+    window.location.pathname.includes("/blog/")
+      ? setIsTop("small")
+      : (window.onscroll = () =>
+          window.pageYOffset === 0 ? setIsTop("large") : setIsTop("small"))
     return () => (window.onscroll = null)
   }, [isTop])
   return (

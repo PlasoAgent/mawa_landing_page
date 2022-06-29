@@ -1,9 +1,10 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
 import Seo from "../components/seo"
-import { s, colors } from "../newstyle/index"
+import { s, colors } from "../style/index"
 import ShareButtons from "../components/shareButtons/shareButtons"
+import blogHeader from "../images/blogheader.webp"
+import Img from "gatsby-image"
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -20,7 +21,31 @@ const BlogPostTemplate = ({ data, location }) => {
   // const { previous, next } = data
 
   return (
-    <>
+    <div>
+      <div
+        css={{
+          position: "relative",
+          overflow: "hidden",
+          zIndex: "0",
+          height: "20vh",
+          width: "100%",
+          paddingTop: "50px",
+        }}
+      >
+        <img
+          src={blogHeader}
+          alt=""
+          css={{
+            position: "absolute",
+            top: "0px",
+            left: "0px",
+            minHeight: "20vh",
+            width: "100%",
+            objectFit: "cover",
+            height: "2vh",
+          }}
+        />
+      </div>
       <Seo
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
@@ -35,7 +60,21 @@ const BlogPostTemplate = ({ data, location }) => {
       >
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
-          {/* <p>{post.frontmatter.date}</p> */}
+          <div
+            css={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              gap: 10,
+            }}
+          >
+            <img
+              css={{ width: 16, height: 16 }}
+              src="https://img.icons8.com/android/24/000000/clock.png"
+              alt=""
+            />
+            <p style={{ margin: 0 }}>{post.frontmatter.date}</p>
+          </div>
         </header>
         <Img css={{ marginBottom: 1 + "rem" }} fluid={image} />
 
@@ -77,7 +116,7 @@ const BlogPostTemplate = ({ data, location }) => {
           </li>
         </ul>
       </nav> */}
-    </>
+    </div>
   )
 }
 
@@ -85,7 +124,6 @@ const style = {
   blogPost: {
     h1: { fontSize: "2rem" },
     padding: "1rem",
-    marginTop: "9rem !important",
     strong: {
       color: colors.brand,
     },
@@ -149,10 +187,18 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
+      html
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "DD MMMM YYYY", locale: "pl")
         description
+        image {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
