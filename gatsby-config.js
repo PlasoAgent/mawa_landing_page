@@ -11,32 +11,8 @@ module.exports = {
     "gatsby-plugin-htaccess",
     `gatsby-plugin-emotion`,
     "gatsby-plugin-robots-txt",
-    {
-      resolve: "gatsby-plugin-sitemap",
-      options: {
-        query: `
-        {
-          allSitePage {
-            nodes {
-              path
-            }
-          }
-        }
-      `,
-        resolveSiteUrl: () => siteUrl,
-        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
-          return allPages.map(page => {
-            return { ...page }
-          })
-        },
-        serialize: ({ path }) => {
-          return {
-            url: path,
-            lastmod: todayDate,
-          }
-        },
-      },
-    },
+    "gatsby-plugin-sitemap",
+
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
