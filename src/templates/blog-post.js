@@ -123,7 +123,6 @@ const BlogPostTemplate = ({ data, location }) => {
 const style = {
   blogPost: {
     h1: { fontSize: "2rem" },
-    padding: "1rem",
     strong: {
       color: colors.brand,
     },

@@ -14,6 +14,7 @@ const Header = () => {
     selectedSite === "/" ? "large" : "small"
   )
   const [open, setOpen] = React.useState(false)
+  console.log(open)
   React.useEffect(() => {
     selectedSite === "/" && setIsTop("large")
   }, [selectedSite])
@@ -25,6 +26,9 @@ const Header = () => {
 
     return () => (window.onscroll = null)
   }, [isTop, selectedSite])
+  const hamburgerHandler = () => {
+    open ? setOpen(false) : setOpen(true)
+  }
   return (
     <header css={[header, header[isTop]]}>
       <Link
@@ -40,10 +44,43 @@ const Header = () => {
       <div css={header[isTop].logoClaim}>
         <img src={logoClaim} alt="" />
       </div>
-      <div css={{ position: "absolute", top: 15, right: 15 }}>
+      {/* <div
+        css={{ position: "absolute", top: 15, right: 15 }}
+        onClick={hamburgerHandler}
+      >
         <img src={hamburger} css={{ width: 30, height: 30 }} />
+      </div> */}
+      <div
+        css={{
+          position: "absolute",
+          top: 20,
+          right: 15,
+          "@media only screen and (max-width: 426px)": {
+            top: 15,
+          },
+        }}
+        onClick={hamburgerHandler}
+      >
+        <div
+          css={[
+            hamburger_style,
+            open === true ? hamburger_style.open : hamburger_style.close,
+          ]}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div css={header[isTop].mobile}>
+      <div
+        css={[
+          header[isTop].mobile,
+          open ? header[isTop].mobile.open : header[isTop].mobile.close,
+        ]}
+      >
         <Link
           to={"/"}
           onClick={() => {
@@ -105,11 +142,20 @@ const header = {
     background: "rgba(0,0,0,0.5)",
     borderBottom: "3px solid #ff0f00",
     mobile: {
+      paddingTop: "65px",
+      backgroundColor: "rgba(0,0,0,0.8)",
       width: "100%",
-      display: "block",
       position: "fixed",
-      top: 50,
+      top: 0,
       zIndex: 60,
+      open: {
+        opacity: 1,
+        transition: "opacity 0.3s ease-in",
+      },
+      close: {
+        opacity: 0,
+        transition: "opacity 0.3s ease-in",
+      },
       a: {
         display: "flex",
         margin: "0 2em 0 0",
@@ -269,7 +315,56 @@ const header = {
     boxShadow: "0px 1px 3px 0px rgb(0 0 0 / 20%)",
     height: "64px",
     mobile: {
-      display: "none",
+      paddingTop: "65px",
+      backgroundColor: "rgba(0,0,0,0.8)",
+      width: "100%",
+      position: "fixed",
+      top: 0,
+      zIndex: 60,
+      open: {
+        opacity: 1,
+        transition: "opacity 0.3s ease-in",
+      },
+      close: {
+        opacity: 0,
+        transition: "opacity 0.3s ease-in",
+      },
+      a: {
+        display: "flex",
+        margin: "0 2em 0 0",
+        textDecoration: "none",
+        alignItems: "center",
+        opacity: "0.7",
+        color: "#fff",
+        transition: "1s",
+        textTransform: "uppercase",
+        width: "100%",
+        borderTop: "1px solid #444",
+        backgroundColor: "rgba(0,0,0,0.8)",
+        padding: "16px",
+        ":last-child": {
+          borderBottom: "1px solid #444",
+        },
+        ":hover": {
+          opacity: 1,
+        },
+        p: {
+          margin: 0,
+        },
+      },
+
+      svg: {
+        display: "flex",
+        fontSize: "20px",
+      },
+      p: {
+        fontSize: "20px",
+      },
+      "@media only screen and (min-width: 1024px)": {
+        width: "100%",
+        display: "block",
+        position: "fixed",
+      },
     },
     nav: {
       margin: "0 5.5em 0 0",
@@ -296,6 +391,7 @@ const header = {
       },
       "@media only screen and (max-width: 1024px)": {
         margin: "0 0.2em 0 0",
+        display: "none",
       },
     },
     logo: {
@@ -332,7 +428,7 @@ const header = {
         left: "1em",
         top: 0,
         width: "4em",
-        zIndex: 1000,
+        zIndex: 8,
       },
     },
     logoClaim: {
@@ -421,6 +517,138 @@ const header = {
     transition: "all 0.5s ease-in-out",
   },
   close: {
+    display: "none !important",
+  },
+}
+const hamburger_style = {
+  width: "30px",
+  height: "22px",
+  position: "relative",
+  WebkitTransform: "rotate(0deg)",
+  MozTransform: "rotate(0deg)",
+  OTransform: "rotate(0deg)",
+  transform: "rotate(0deg)",
+  WebkitTransition: ".5s ease-in-out",
+  MozTransition: ".5s ease-in-out",
+  OTransition: ".5s ease-in-out",
+  transition: ".5s ease-in-out",
+  cursor: "pointer",
+  zIndex: 999,
+  "@media only screen and (min-width: 1024px)": {
     display: "none",
+  },
+
+  close: {
+    span: {
+      display: "block",
+      position: "absolute",
+      height: "4px",
+      width: "50%",
+      background: "#ffffff",
+      opacity: "0.7",
+      WebkitTransform: "rotate(0deg)",
+      MozTransform: "rotate(0deg)",
+      OTransform: "rotate(0deg)",
+      transform: "rotate(0deg)",
+      WebkitTransition: ".25s ease-in-out",
+      MozTransition: ".25s ease-in-out",
+      OTransition: ".25s ease-in-out",
+      transition: ".25s ease-in-out",
+      zIndex: 999999999999,
+      ":nth-child(even)": {
+        left: "50%",
+        borderRadius: "0 4px 4px 0",
+      },
+      ":nth-child(odd)": {
+        left: "0px",
+        borderRadius: "4px 0 0 4px",
+      },
+      ":nth-child(1)": {
+        top: "0px",
+      },
+      ":nth-child(2)": {
+        top: "0px",
+      },
+      ":nth-child(3)": {
+        top: "9px",
+      },
+      ":nth-child(4)": {
+        top: "9px",
+      },
+      ":nth-child(5)": {
+        top: "18px",
+      },
+      ":nth-child(6)": {
+        top: "18px",
+      },
+    },
+  },
+  open: {
+    span: {
+      display: "block",
+      position: "absolute",
+      height: "4.5px",
+      width: "50%",
+      background: "#ffffff",
+      WebkitTransform: "rotate(0deg)",
+      MozTransform: "rotate(0deg)",
+      OTransform: "rotate(0deg)",
+      transform: "rotate(0deg)",
+      WebkitTransition: ".25s ease-in-out",
+      MozTransition: ".25s ease-in-out",
+      OTransition: ".25s ease-in-out",
+      transition: ".25s ease-in-out",
+      zIndex: 999999999999,
+      ":nth-child(even)": {
+        left: "50%",
+        borderRadius: "0 4.5px 4.5px 0",
+      },
+      ":nth-child(odd)": {
+        left: "0px",
+        borderRadius: "4.5px 0 0 4.5px",
+      },
+      ":nth-child(1)": {
+        WebkitTransform: "rotate(45deg)",
+        MozTransform: "rotate(45deg)",
+        OTransform: "rotate(45deg)",
+        transform: "rotate(45deg)",
+        left: "2.5px",
+        top: "3.5px",
+      },
+      ":nth-child(2)": {
+        WebkitTransform: "rotate(-45deg)",
+        MozTransform: "rotate(-45deg)",
+        OTransform: "rotate(-45deg)",
+        transform: "rotate(-45deg)",
+        left: "calc(50% - 2.5px)",
+        top: "3.5px",
+      },
+      ":nth-child(3)": {
+        left: "-50%",
+        opacity: "0",
+        top: "9px",
+      },
+      ":nth-child(4)": {
+        left: "100%",
+        opacity: "0",
+        top: "9px",
+      },
+      ":nth-child(5)": {
+        WebkitTransform: "rotate(-45deg)",
+        MozTransform: "rotate(-45deg)",
+        OTransform: "rotate(-45deg)",
+        transform: "rotate(-45deg)",
+        left: "2.5px",
+        top: "14.5px",
+      },
+      ":nth-child(6)": {
+        WebkitTransform: "rotate(45deg)",
+        MozTransform: "rotate(45deg)",
+        OTransform: "rotate(45deg)",
+        transform: "rotate(45deg)",
+        left: "calc(50% - 2.5px)",
+        top: "14.5px",
+      },
+    },
   },
 }
