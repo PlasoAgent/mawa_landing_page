@@ -8,7 +8,7 @@ import { Link } from "gatsby"
 import hamburger from "../images/hamburger.svg"
 const Header = () => {
   const [selectedSite, setSelectedSite] = React.useState(
-    window.location.pathname
+    window.location !== undefined ? window.location.pathname : "/"
   )
   const [isTop, setIsTop] = React.useState(
     selectedSite === "/" ? "large" : "small"
