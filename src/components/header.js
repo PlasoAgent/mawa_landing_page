@@ -5,22 +5,34 @@ import original from "../images/mawa_original.svg"
 import mig from "../images/mawa_mig.svg"
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout"
 import { Link } from "gatsby"
-
+import hamburger from "../images/hamburger.svg"
 const Header = () => {
-  const [isTop, setIsTop] = React.useState("large")
+  const [selectedSite, setSelectedSite] = React.useState(
+    window.location.pathname
+  )
+  const [isTop, setIsTop] = React.useState(
+    selectedSite === "/" ? "large" : "small"
+  )
+  const [open, setOpen] = React.useState(false)
   React.useEffect(() => {
-    if (typeof window !== "undefined") {
-      console.log(window.location.pathname)
-    }
-    window.location.pathname.includes("/blog/")
-      ? setIsTop("small")
-      : (window.onscroll = () =>
+    selectedSite === "/" && setIsTop("large")
+  }, [selectedSite])
+  React.useEffect(() => {
+    selectedSite === "/"
+      ? (window.onscroll = () =>
           window.pageYOffset === 0 ? setIsTop("large") : setIsTop("small"))
+      : setIsTop("small")
+
     return () => (window.onscroll = null)
-  }, [isTop])
+  }, [isTop, selectedSite])
   return (
     <header css={[header, header[isTop]]}>
-      <Link to="/">
+      <Link
+        to="/"
+        onClick={() => {
+          setSelectedSite("/")
+        }}
+      >
         <div css={header[isTop].logo}>
           <img src={logo} alt="" />
         </div>
@@ -28,17 +40,52 @@ const Header = () => {
       <div css={header[isTop].logoClaim}>
         <img src={logoClaim} alt="" />
       </div>
+      <div css={{ position: "absolute", top: 15, right: 15 }}>
+        <img src={hamburger} css={{ width: 30, height: 30 }} />
+      </div>
       <div css={header[isTop].mobile}>
+        <Link
+          to={"/"}
+          onClick={() => {
+            setSelectedSite("/")
+          }}
+        >
+          <p>Start</p>
+        </Link>
         <a href="https://sklep.mawa-polska.pl/">
           <ShoppingCartCheckoutIcon />
           <p>Sklep</p>
         </a>
+        <Link
+          to={"/blog"}
+          onClick={() => {
+            setSelectedSite("blog")
+          }}
+        >
+          <p>Blog</p>
+        </Link>
       </div>
       <nav>
+        <Link
+          to={"/"}
+          onClick={() => {
+            setSelectedSite("/")
+          }}
+        >
+          <p>Start</p>
+        </Link>
         <a href="https://sklep.mawa-polska.pl/">
           <ShoppingCartCheckoutIcon />
           <p>Sklep</p>
         </a>
+        <Link
+          to={"/blog"}
+          onClick={() => {
+            setSelectedSite("blog")
+          }}
+        >
+          <p>Blog</p>
+        </Link>
       </nav>
       <div css={header[isTop].origin}>
         <img src={original} alt="" />
@@ -53,7 +100,6 @@ const Header = () => {
 }
 
 export default Header
-
 const header = {
   large: {
     background: "rgba(0,0,0,0.5)",
@@ -62,21 +108,29 @@ const header = {
       width: "100%",
       display: "block",
       position: "fixed",
-      top: "0",
+      top: 50,
       zIndex: 60,
       a: {
         display: "flex",
         margin: "0 2em 0 0",
         textDecoration: "none",
-        float: "right",
         alignItems: "center",
         opacity: "0.7",
         color: "#fff",
         transition: "1s",
         textTransform: "uppercase",
-        width: "min-content",
+        width: "100%",
+        borderTop: "1px solid #444",
+        backgroundColor: "rgba(0,0,0,0.8)",
+        padding: "16px",
+        ":last-child": {
+          borderBottom: "1px solid #444",
+        },
         ":hover": {
           opacity: 1,
+        },
+        p: {
+          margin: 0,
         },
       },
 
@@ -88,13 +142,18 @@ const header = {
         fontSize: "20px",
       },
       "@media only screen and (min-width: 1024px)": {
-        display: "none",
+        width: "100%",
+        display: "block",
+        position: "fixed",
       },
     },
     nav: {
       margin: "auto",
       padding: "0.5em 0 0 0",
       width: "min-content",
+      display: "flex",
+      flexDirection: "row",
+      gap: 25,
       a: {
         display: "flex",
         textDecoration: "none",
@@ -108,13 +167,15 @@ const header = {
           opacity: 1,
         },
       },
-
       svg: {
         display: "flex",
         fontSize: "36px",
       },
       p: {
-        fontSize: "36px",
+        fontSize: "20px",
+        ":nth-child(2)": {
+          fontSize: "30px",
+        },
       },
       "@media only screen and (max-width: 1024px)": {
         display: "none",
@@ -216,6 +277,9 @@ const header = {
       height: "4em",
       float: "right",
       boxSizing: "border-box",
+      display: "flex",
+      flexDirection: "row",
+      gap: "25px",
       a: {
         display: "flex",
         margin: "0.3rem",
@@ -355,5 +419,8 @@ const header = {
   transition: "all 0.5s ease-in-out",
   img: {
     transition: "all 0.5s ease-in-out",
+  },
+  close: {
+    display: "none",
   },
 }
