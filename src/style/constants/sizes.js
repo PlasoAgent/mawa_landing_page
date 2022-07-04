@@ -4,7 +4,7 @@ export const ss = "@media screen and (max-width: 405px)"
 export const sss = "@media screen and (max-width: 369px)"
 export const sm = "@media screen and (max-width: 720px)"
 export const sm_only = "@media screen and (max-width: 920px)"
-export const sm_down = "@media screen and (max-width: 959px)"
+export const sm_down = "@media screen and (max-width: 1024px)"
 export const md = "@media screen and (min-width: 960px)"
 export const md_only =
   "@media screen and (min-width: 960px) and (max-width: 1279px)"

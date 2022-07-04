@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Seo from "../components/seo"
@@ -6,10 +6,16 @@ import { s } from "../style/index"
 import blogHeader from "../images/blogheader.webp"
 import blogDeco from "../images/blogDeco.svg"
 import blogDeco2 from "../images/blogDeco2.png"
-import { md_middle } from "./../style/constants/sizes"
 //CONTEXT//
 const BlogIndex = ({ data, location }) => {
-  const posts = data.allMarkdownRemark.nodes
+  const [noOfElement, setNoOfElement] = useState(3)
+
+  const posts = data.allMarkdownRemark.nodes.slice(0, noOfElement)
+  const allPostsLength = data.allMarkdownRemark.nodes.length
+
+  const loadMore = () => {
+    setNoOfElement(noOfElement + noOfElement)
+  }
   const url = location.href
   return (
     <>
@@ -185,6 +191,25 @@ const BlogIndex = ({ data, location }) => {
               })}
             </section>
           </div>
+          {allPostsLength > 6 && allPostsLength > noOfElement && (
+            <div
+              css={{
+                color: "#fff",
+                textDecoration: "none",
+                width: "100%",
+                padding: "10px 0px 10px 0px",
+                backgroundColor: "rgba(0, 0, 0, 0.7)",
+                textAlign: "center",
+                cursor: "pointer",
+                marginBottom: "2rem",
+              }}
+              onClick={() => {
+                loadMore()
+              }}
+            >
+              ZAŁADUJ WIĘCEJ
+            </div>
+          )}
         </div>
         <div
           css={{

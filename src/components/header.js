@@ -155,6 +155,7 @@ const header = {
       close: {
         opacity: 0,
         transition: "opacity 0.3s ease-in",
+        display: "none !important",
       },
       a: {
         display: "flex",
@@ -328,6 +329,7 @@ const header = {
       close: {
         opacity: 0,
         transition: "opacity 0.3s ease-in",
+        display: "none !important",
       },
       a: {
         display: "flex",
