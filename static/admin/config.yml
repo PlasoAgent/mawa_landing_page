@@ -2,9 +2,7 @@ backend:
   name: git-gateway
   branch: main
   site_domain: cms.netlify.com
-local_backend:
-  url: http://localhost:8082/api/v1
-  allowed_hosts: ["192.168.0.107"]
+local_backend: true
 media_folder: static/img
 public_folder: /img
 collections:
@@ -15,7 +13,7 @@ collections:
     folder: "content/blog" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "index"
-    path: "{{path}}/{{title}}/index"
+    path: "{{path}}/index"
     editor:
       preview: true
     fields: # The fields for each document, usually in front matter
@@ -25,3 +23,16 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "Link w Wyszukiwarce",
+          name: "path",
+          widget: "string",
+          required: true,
+          hint:
+            "Jest to unikalna nazwa dla podstrony z blogiem, zapoznaj się z instrukcją:
+            1.NIE MOŻNA UŻYWAĆ POLSKICH ZNAKÓW,
+            2.ZAMIAST SPACJI MYŚLNIKI,
+            3.NIE UŻYWAĆ ZNAKÓW SPECJALNYCH,
+            4.PO OPUBLIKOWANIU BLOGA NIE ZEMINIAĆ W PRZYSZŁOŚCI,(jeśli zostało zmienione, zmienić nazwę pliku .md w folderze /content/blog na taką jaką podało się w polu),
+            5.Przykład: wyjscie-z-psem-na-spacer ",
+        }

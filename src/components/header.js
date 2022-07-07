@@ -5,7 +5,6 @@ import original from "../images/mawa_original.svg"
 import mig from "../images/mawa_mig.svg"
 import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout"
 import { Link } from "gatsby"
-import hamburger from "../images/hamburger.svg"
 const Header = () => {
   const [selectedSite, setSelectedSite] = React.useState(
     typeof window !== "undefined" && window.location.pathname
@@ -14,7 +13,30 @@ const Header = () => {
     selectedSite === "/" ? "large" : "small"
   )
   const [open, setOpen] = React.useState(false)
-  console.log(open)
+  // React.useEffect(() => {
+  //   return history.listen(location => {
+  //     if (history.action === "PUSH") {
+  //       setLocationKeys([location.key])
+  //     }
+
+  //     if (history.action === "POP") {
+  //       if (locationKeys[1] === location.key) {
+  //         setLocationKeys(([_, ...keys]) => keys)
+
+  //         setSelectedSite(
+  //           typeof window !== "undefined" && window.location.pathname
+  //         )
+  //       } else {
+  //         setLocationKeys(keys => [location.key, ...keys])
+
+  //         setSelectedSite(
+  //           typeof window !== "undefined" && window.location.pathname
+  //         )
+  //       }
+  //     }
+  //   })
+  // }, [locationKeys])
+
   React.useEffect(() => {
     selectedSite === "/" && setIsTop("large")
   }, [selectedSite])
