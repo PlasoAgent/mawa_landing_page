@@ -238,7 +238,7 @@ const style = {
       color: "#6bb53a",
     },
     "ol, ul": {
-      margin: "5px 0px 5px 2rem",
+      margin: "5px 0px 5px 0rem",
     },
     width: 800,
     "@media only screen and (max-width: 1200px)": {
@@ -264,6 +264,7 @@ const style = {
       fontSize: 16,
       lineHeight: "28px",
       margin: "0 auto 20px",
+      textAlign: "justify",
     },
 
     "h1,h2,h3,h4,h5,h6": {

@@ -8,7 +8,8 @@ import blogDeco from "../images/blogDeco.svg"
 import blogDeco2 from "../images/blogDeco2.png"
 //CONTEXT//
 const BlogIndex = ({ data, location }) => {
-  const [noOfElement, setNoOfElement] = useState(3)
+  const elements_on_site = 9
+  const [noOfElement, setNoOfElement] = useState(elements_on_site)
 
   const posts = data.allMarkdownRemark.nodes.slice(0, noOfElement)
   const allPostsLength = data.allMarkdownRemark.nodes.length
@@ -88,7 +89,12 @@ const BlogIndex = ({ data, location }) => {
                       }}
                     >
                       <Link to={"/blog" + post.fields.slug}>
-                        <Img fluid={image} />
+                        <Img
+                          fluid={image}
+                          css={{
+                            height: "230px !important",
+                          }}
+                        />
                       </Link>
                     </div>
                     <article
@@ -191,7 +197,7 @@ const BlogIndex = ({ data, location }) => {
               })}
             </section>
           </div>
-          {allPostsLength > 6 && allPostsLength > noOfElement && (
+          {allPostsLength > elements_on_site && allPostsLength > noOfElement && (
             <div
               css={{
                 color: "#fff",

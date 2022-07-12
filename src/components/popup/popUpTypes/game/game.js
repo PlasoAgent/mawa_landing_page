@@ -116,7 +116,7 @@ const Game = () => {
               textShadow: "1px 1px 0px #ffffff25",
             }}
           >
-            SELL2022
+            MAWA5
           </b>
         </p>
       )}
