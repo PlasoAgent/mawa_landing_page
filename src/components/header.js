@@ -38,6 +38,15 @@ const Header = () => {
   // }, [locationKeys])
 
   React.useEffect(() => {
+    window.addEventListener(
+      "hashchange",
+      function () {
+        console.log("Hash was changed!")
+      },
+      false
+    )
+  })
+  React.useEffect(() => {
     selectedSite === "/" && setIsTop("large")
   }, [selectedSite])
   React.useEffect(() => {

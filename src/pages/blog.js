@@ -17,7 +17,6 @@ const BlogIndex = ({ data, location }) => {
   const loadMore = () => {
     setNoOfElement(noOfElement + noOfElement)
   }
-  const url = location.href
   return (
     <>
       <Seo title="Blog" />
@@ -212,6 +211,11 @@ const BlogIndex = ({ data, location }) => {
               onClick={() => {
                 loadMore()
               }}
+              onKeyDown={() => {
+                loadMore()
+              }}
+              role="button"
+              tabIndex={0}
             >
               ZAŁADUJ WIĘCEJ
             </div>

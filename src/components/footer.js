@@ -10,7 +10,7 @@ import printerest from "../images/pinterest_logo.svg"
 import youtube from "../images/mawa_youtube.svg"
 
 const info =
-  "MAWA Polska\nWenedów 3\n75-847 Koszalin\nPolska\nTelefon: 660 200 016, 94 342 32 72"
+  "Plaso Agentur\nWenedów 3\n75-847 Koszalin\nPolska\nTelefon: 660 200 016, 94 342 32 72"
 const Footer = () => {
   return (
     <div css={style}>
@@ -28,7 +28,9 @@ const Footer = () => {
       <div css={style.footerLeft}>
         <div css={style.footerLeft.column1}>
           {info}
-          <a href="mailto:office@plaso-agentur.de">info@mawa-polska.pl</a>
+          <p>
+            <a href="mailto:office@plaso-agentur.de">info@mawa-polska.pl</a>
+          </p>
         </div>
       </div>
       <div css={style.footerRight}>

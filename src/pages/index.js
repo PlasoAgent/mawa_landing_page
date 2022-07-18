@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Seo from "../components/seo"
 import Slider from "../components/slider/slider"
 import BrandDescription from "./../components/brand/brandDescription"
@@ -29,7 +29,6 @@ const IndexPage = () => {
   const params = new URLSearchParams(
     typeof window !== "undefined" && window.location.search
   )
-
   return (
     <div>
       <Seo description={seo.description} title={seo.title} image={seo.image} />
@@ -45,6 +44,10 @@ const IndexPage = () => {
       {params.get("type") === "game" && <Popup />}
     </div>
   )
+}
+
+IndexPage.defaultProps = {
+  path: "/",
 }
 
 export default IndexPage
